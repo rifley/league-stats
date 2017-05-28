@@ -2,9 +2,9 @@
 
 ## Setup/Installation Requirements
 
-* _Clone this repository to your local machine_
-* _Open with Android Studio_
-* _Run the Main Activity_
+* `Clone this repository to your local machine`
+* `Open with Android Studio`
+* `Run the Main Activity`
 
 ## Known Bugs
 _TBD_
@@ -21,10 +21,10 @@ _[email](mailto:watts.up.riley@gmail.com) - [github](https://www.github.com/rifl
 
 ## Technologies Used
 
-_Android Studio, Java, XML_
+Android Studio - Java
 
 ### License
 
-_MIT License_
+MIT License
 
 Copyright (c) 2017 - Riley Watts
