@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="leagueYellowPrimary">#CCA235</color>
+    <color name="leagueTeal">#067B8F</color>
+    <color name="leagueBlack">#031018</color>
 </resources>
