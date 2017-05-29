@@ -23,8 +23,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.leaguestats.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".ContactActivity" />
-        <activity android:name=".BackpackActivity"></activity>
+        <activity android:name=".ContactActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.epicodus.leaguestats.MainActivity"></meta-data>
+        </activity>
+        <activity android:name=".BackpackActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.leaguestats.MainActivity"></meta-data>
+        </activity>
     </application>
 
 </manifest>

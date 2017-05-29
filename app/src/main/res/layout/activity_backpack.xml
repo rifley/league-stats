@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/league"
+        android:layout_alignParentTop="true" />
+
+    <ListView
+        android:id="@+id/championArray"
+        android:layout_width="260dp"
+        android:layout_height="400dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:background="@color/leagueTeal"
+        />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="150dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="192dp"
-        android:text="TextView" />
+        android:layout_above="@+id/championArray"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="Your Backpack"
+        android:textColor="@color/leagueYellowPrimary"
+    />
 </RelativeLayout>
