@@ -1,15 +1,18 @@
-package com.epicodus.leaguestats;
+package com.epicodus.leaguestats.ui;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import butterknife.Bind;
+import com.epicodus.leaguestats.adapters.BackpackArrayAdapter;
+import com.epicodus.leaguestats.R;
+import com.epicodus.leaguestats.models.Champion;
+
+import java.util.ArrayList;
 
 public class BackpackActivity extends AppCompatActivity {
     private ListView mChampionArray;
+    public ArrayList<Champion> mChampions = new ArrayList<>();
 
     private String[] champions = new String[] {"Annie", "Gangplank", "Kha'zix", "Brand", "Ashe", "Tryndamere", "Bard", "Gragas", "Graves", "Lucian", "Blitzcrank", "Thresh", "Ekko", "Maokai", "Gnar"};
 

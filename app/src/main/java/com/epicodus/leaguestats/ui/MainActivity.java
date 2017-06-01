@@ -1,4 +1,4 @@
-package com.epicodus.leaguestats;
+package com.epicodus.leaguestats.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.epicodus.leaguestats.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
