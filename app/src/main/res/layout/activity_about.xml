@@ -7,9 +7,30 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/league"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/leagueYellowPrimary"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/league" />
+
+    <TextView
+        android:id="@+id/HeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:background="@color/leagueYellowPrimary"
+        android:text="About Page"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/HeaderTextView"
+        android:layout_centerHorizontal="true"
+        android:background="@color/leagueYellowPrimary"
+        android:layout_marginTop="350dp"
+        android:text="TextView" />
 </RelativeLayout>

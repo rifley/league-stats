@@ -16,11 +16,11 @@
         android:id="@+id/championArray"
         android:layout_width="260dp"
         android:layout_height="400dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:background="@color/leagueTeal"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
 
     <TextView
         android:id="@+id/textView2"

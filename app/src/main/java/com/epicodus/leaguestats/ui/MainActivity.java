@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -15,9 +16,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    @Bind(R.id.excitedButton) Button mExcitedButton;
+    @Bind(R.id.userButton) Button mUserButton;
     @Bind(R.id.leagueTextView) TextView mLeagueTextView;
     @Bind(R.id.backpackButton) ImageButton mBackpackButton;
+    @Bind(R.id.userNameEditText)
+    EditText mUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +31,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ButterKnife.bind(this);
 
-        mExcitedButton.setOnClickListener(this);
+        mUserButton.setOnClickListener(this);
         mBackpackButton.setOnClickListener(this);
         mLeagueTextView.setTypeface(leagueFont);
     }
 
     @Override
     public void onClick(View v) {
-        if(v == mExcitedButton) {
-          Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+        if(v == mUserButton) {
+            String userName = mUserName.getText().toString();
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+            intent.putExtra("name", userName);
             startActivity(intent);
         }
         if(v == mBackpackButton) {
