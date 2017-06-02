@@ -5,6 +5,10 @@ import android.util.Log;
 import com.epicodus.leaguestats.Constants;
 import com.epicodus.leaguestats.models.Champion;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 import okhttp3.Call;
@@ -24,8 +28,8 @@ public class RiotService {
                 .build();
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.RIOT_BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter("/", id);
-        urlBuilder.addPathSegment(Constants.RIOT_CHAMPSTATS_QUERY_PARAMETER);
+        urlBuilder.addPathSegment(id);
+        urlBuilder.addQueryParameter("tags", "stats");
         String url = urlBuilder.build().toString();
 
         Log.d("url", url);
@@ -48,8 +52,30 @@ public class RiotService {
         ArrayList<Champion> champions = new ArrayList<>();
 
         try {
+            String jsonData = response.body().string();
+            if(response.isSuccessful()) {
+                JSONObject riotJSON = new JSONObject(jsonData);
+                String name = riotJSON.getString("name");
+                String title = riotJSON.getString("title");
+                Double armor = riotJSON.getJSONObject("stats")
+                        .getDouble("armor");
+                Double healthPoints = riotJSON.getJSONObject("stats")
+                        .getDouble("hp");
+                Double attackDamage = riotJSON.getJSONObject("stats")
+                        .getDouble("attackdamage");
+                Double magicResist = riotJSON.getJSONObject("stats")
+                        .getDouble("spellblock");
+                Log.i("name", name);
+                Champion responseChampion = new Champion(name, title, armor, healthPoints, attackDamage, magicResist);
+                champions.add(responseChampion);
 
+            }
+        } catch(IOException e){
+            e.printStackTrace();
+        } catch(JSONException e) {
+            e.printStackTrace();
         }
-        }
+        return champions;
     }
 }
+
