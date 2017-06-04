@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.getStartedButton) Button mUserButton;
     @Bind(R.id.leagueTextView) TextView mLeagueTextView;
-    @Bind(R.id.backpackButton) ImageButton mBackpackButton;
+
     @Bind(R.id.summonerNameEditText)
     EditText mSummonerName;
 
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mUserButton.setOnClickListener(this);
-        mBackpackButton.setOnClickListener(this);
         mLeagueTextView.setTypeface(leagueFont);
     }
 
@@ -40,13 +39,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == mUserButton) {
             String userName = mSummonerName.getText().toString();
-            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+            Intent intent = new Intent(MainActivity.this, SummonerActivity.class);
             intent.putExtra("name", userName);
             startActivity(intent);
         }
-        if(v == mBackpackButton) {
-            Intent intent = new Intent(MainActivity.this, BackpackActivity.class);
-            startActivity(intent);
-        }
+//        if(v ==  ) {
+//            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+//            startActivity(intent);
+//        }
     }
 }

@@ -34,7 +34,7 @@ public class AddChampionActivity extends AppCompatActivity {
             }
             @Override
             public void onResponse(Call call, Response response) {
-                mChamps = riotService.processResults(response);
+                mChamps = riotService.processStats(response);
 
 //                BackpackActivity.this.runOnUiThread(new Runnable() {
 //                    @Override
