@@ -6,11 +6,11 @@ package com.epicodus.leaguestats.models;
 
 public class Summoner {
     private String mName;
-    private long mId;
-    private long mLevel;
+    private Long mId;
+    private Long mLevel;
 
 
-    public Summoner (String name,long id, long level) {
+    public Summoner (String name, Long id, Long level) {
         this.mName = name;
         this.mId = id;
         this.mLevel = level;
@@ -19,6 +19,6 @@ public class Summoner {
     public String getName() {
         return mName;
     }
-    public long getId() { return mId; }
-    public long getLevel() { return mLevel; }
+    public Long getId() { return mId; }
+    public Long getLevel() { return mLevel; }
     }

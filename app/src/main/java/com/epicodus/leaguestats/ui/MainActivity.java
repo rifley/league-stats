@@ -39,9 +39,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == mUserButton) {
             String userName = mSummonerName.getText().toString();
-            Intent intent = new Intent(MainActivity.this, SummonerActivity.class);
-            intent.putExtra("name", userName);
-            startActivity(intent);
+            if(userName.length() == 0 ) {
+                mSummonerName.setError( "Summoner Name Required!");
+            }
+            else {
+                Intent intent = new Intent(MainActivity.this, SummonerActivity.class);
+                intent.putExtra("name", userName);
+                startActivity(intent);
+            }
         }
 //        if(v ==  ) {
 //            Intent intent = new Intent(MainActivity.this, AboutActivity.class);

@@ -49,6 +49,9 @@ public class SummonerActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mSummoner = riotService.processSummoner(response);
+                Long summonerId = mSummoner.get(0).getId();
+
+                Log.d("summoner id", summonerId.toString());
 
 
 //                BackpackActivity.this.runOnUiThread(new Runnable() {
