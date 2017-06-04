@@ -16,11 +16,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    @Bind(R.id.userButton) Button mUserButton;
+    @Bind(R.id.getStartedButton) Button mUserButton;
     @Bind(R.id.leagueTextView) TextView mLeagueTextView;
     @Bind(R.id.backpackButton) ImageButton mBackpackButton;
-    @Bind(R.id.userNameEditText)
-    EditText mUserName;
+    @Bind(R.id.summonerNameEditText)
+    EditText mSummonerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v == mUserButton) {
-            String userName = mUserName.getText().toString();
+            String userName = mSummonerName.getText().toString();
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             intent.putExtra("name", userName);
             startActivity(intent);

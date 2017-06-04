@@ -19,7 +19,7 @@ import okhttp3.Response;
 public class BackpackActivity extends AppCompatActivity {
     private ListView mChampionArray;
     public ArrayList<Champion> mChampions = new ArrayList<>();
-    public ArrayList<Champion> mChamps = new ArrayList<>();
+
 
 
     private String[] champions = new String[] {"Annie", "Gangplank", "Kha'zix", "Brand", "Ashe", "Tryndamere", "Bard", "Gragas", "Graves", "Lucian", "Blitzcrank", "Thresh", "Ekko", "Maokai", "Gnar"};
@@ -36,28 +36,9 @@ public class BackpackActivity extends AppCompatActivity {
         BackpackArrayAdapter adapter = new BackpackArrayAdapter(this, android.R.layout.simple_list_item_1, champions, roles);
         mChampionArray.setAdapter(adapter);
 
-        getChampion("2");
+
     }
 
-    private void getChampion(String id) {
-        final RiotService riotService = new RiotService();
-        riotService.findChampion(id, new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-            }
-            @Override
-            public void onResponse(Call call, Response response) {
-                mChamps = riotService.processResults(response);
 
-//                BackpackActivity.this.runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//
-//                    }
-//                });
-            }
-        });
-    }
 }
 
