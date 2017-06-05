@@ -54,9 +54,9 @@ public class ChampionDetailFragment extends Fragment {
 
         mChampionName.setText(mChampion.getName());
         mChampionTitle.setText(mChampion.getTitle());
-        mBaseArmor.setText(mChampion.getArmor());
-        mBaseHealth.setText(mChampion.getHP());
-        mBaseMagicResist.setText(mChampion.getMR());
+        mBaseArmor.setText("Base Armor: " + mChampion.getArmor());
+        mBaseHealth.setText("Base Health: " + mChampion.getHP());
+        mBaseMagicResist.setText("Base Magic Resist: " + mChampion.getMR());
 
 
         return view;

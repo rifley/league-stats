@@ -36,7 +36,6 @@ public class BackpackActivity extends AppCompatActivity {
         BackpackArrayAdapter adapter = new BackpackArrayAdapter(this, android.R.layout.simple_list_item_1, champions, roles);
         mChampionArray.setAdapter(adapter);
 
-
     }
 
 
