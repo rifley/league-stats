@@ -36,7 +36,8 @@
                 android:value="com.epicodus.leaguestats.ui.MainActivity" />
         </activity>
         <activity android:name=".ui.AddChampionActivity" />
-        <activity android:name=".ui.SummonerActivity"></activity>
+        <activity android:name=".ui.SummonerActivity" />
+        <activity android:name=".ui.ChampionDetailActivity"></activity>
     </application>
 
 </manifest>

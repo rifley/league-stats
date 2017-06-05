@@ -1,24 +1,31 @@
 package com.epicodus.leaguestats.models;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Guest on 6/1/17.
  */
 
+@Parcel
 public class Champion {
-    private String mName;
-    private String mTitle;
-    private double mBaseArmor;
-    private double mBaseHP;
-    private double mBaseAD;
-    private double mBaseMR;
+    String mName;
+    String mTitle;
+    Double mBaseArmor;
+    Double mBaseHP;
+    Double mBaseAD;
+    Double mBaseMR;
+    String mImageUrl;
 
-    public Champion (String name, String title, double armor, double hp, double mr, double attackDamage) {
+    public Champion() {}
+
+    public Champion (String name, String title, Double armor, Double hp, Double mr, Double attackDamage) {
         this.mName = name;
         this.mTitle = title;
         this.mBaseArmor = armor;
         this.mBaseHP = hp;
         this.mBaseAD = attackDamage;
         this.mBaseMR = mr;
+        this.mImageUrl = "http://ddragon.leagueoflegends.com/cdn/7.5.2/img/champion/" + name + ".png";
     }
 
     public String getName() {
@@ -27,18 +34,20 @@ public class Champion {
     public String getTitle() {
         return mTitle;
     }
-    public double getArmor() {
-        return mBaseArmor;
+    public String getArmor() {
+        return mBaseArmor.toString();
     }
-    public double getHP() {
-        return mBaseHP;
+    public String getHP() {
+        return mBaseHP.toString();
     }
-    public double getMR() {
-        return mBaseMR;
+    public String getMR() {
+        return mBaseMR.toString();
     }
-    public double getAttack() {
-        return mBaseAD;
+    public String getAttack() {
+        return mBaseAD.toString();
     }
+    public String getImageUrl() { return mImageUrl; }
+
 
 }
 
