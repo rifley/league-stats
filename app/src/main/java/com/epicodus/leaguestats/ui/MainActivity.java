@@ -5,6 +5,8 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.leagueTextView) TextView mLeagueTextView;
 
     @Bind(R.id.summonerNameEditText)
-    EditText mSummonerName;
+    AutoCompleteTextView mSummonerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +33,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ButterKnife.bind(this);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, CHAMPIONS);
+        mSummonerName.setAdapter(adapter);
+
         mUserButton.setOnClickListener(this);
         mLeagueTextView.setTypeface(leagueFont);
     }
+
+    private static final String[] CHAMPIONS = new String[] {
+            "Gragas", "Graves", "Brand", "Olaf"
+    };
 
     @Override
     public void onClick(View v) {
