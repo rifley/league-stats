@@ -38,7 +38,8 @@
         <activity android:name=".ui.AddChampionActivity" />
         <activity android:name=".ui.SummonerActivity" />
         <activity android:name=".ui.ChampionDetailActivity" />
-        <activity android:name=".ui.LoadingActivity"></activity>
+        <activity android:name=".ui.LoadingActivity" />
+        <activity android:name=".CreateAccountActivity"></activity>
     </application>
 
 </manifest>
