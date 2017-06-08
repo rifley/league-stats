@@ -39,7 +39,8 @@
         <activity android:name=".ui.SummonerActivity" />
         <activity android:name=".ui.ChampionDetailActivity" />
         <activity android:name=".ui.LoadingActivity" />
-        <activity android:name=".CreateAccountActivity"></activity>
+        <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".ui.LoginActivity"></activity>
     </application>
 
 </manifest>
