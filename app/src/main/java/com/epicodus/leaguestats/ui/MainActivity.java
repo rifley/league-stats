@@ -12,7 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.epicodus.leaguestats.Constants;
 import com.epicodus.leaguestats.R;
+
+import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,16 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ButterKnife.bind(this);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, CHAMPIONS);
-        mSummonerName.setAdapter(adapter);
-
         mUserButton.setOnClickListener(this);
         mLeagueTextView.setTypeface(leagueFont);
     }
 
-    private static final String[] CHAMPIONS = new String[] {
-            "Gragas", "Graves", "Brand", "Olaf"
-    };
 
     @Override
     public void onClick(View v) {
