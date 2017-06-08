@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "713671059047",
+    "firebase_url": "https://league-win-lane.firebaseio.com",
+    "project_id": "league-win-lane",
+    "storage_bucket": "league-win-lane.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713671059047:android:feb9a556d80a3d4c",
+        "android_client_info": {
+          "package_name": "com.epicodus.leaguestats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713671059047-6ds7r0hv2c4pq6tbbp478iarj2e97n19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJRGt_CdAvB56eztUivSHS0YbAkfsnS68"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

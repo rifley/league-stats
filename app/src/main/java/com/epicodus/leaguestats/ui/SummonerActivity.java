@@ -87,6 +87,7 @@ public class SummonerActivity extends AppCompatActivity implements View.OnClickL
 
 
 
+
     private void getSummoner(String name) {
         final RiotService riotService = new RiotService();
         riotService.findSummoner(name, new Callback() {
