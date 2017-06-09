@@ -9,6 +9,9 @@ A way for Summoners(users) to check their match history, add favorite champions 
 ## Setup/Installation Requirements
 
 * `Clone this repository to your local machine`
+
+
+
 * `Open with Android Studio`
 * `Run the Main Activity`
 

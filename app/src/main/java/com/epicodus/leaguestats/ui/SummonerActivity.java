@@ -5,11 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.epicodus.leaguestats.Constants;
 import com.epicodus.leaguestats.R;
 import com.epicodus.leaguestats.models.Champion;
 import com.epicodus.leaguestats.models.Summoner;
@@ -19,6 +22,7 @@ import org.parceler.Parcels;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,12 +31,11 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class SummonerActivity extends AppCompatActivity implements View.OnClickListener{
-    @Bind(R.id.summonerNameTextView)
-    TextView mSummonerName;
-    @Bind(R.id.championDetailButton)
-    Button mChampionDetails;
-    @Bind(R.id.backpackImageButton)
-    ImageButton mBackpack;
+    @Bind(R.id.summonerNameTextView) TextView mSummonerName;
+    @Bind(R.id.championDetailButton) Button mChampionDetails;
+    @Bind(R.id.backpackImageButton) ImageButton mBackpack;
+    @Bind(R.id.championCompleteTextView) AutoCompleteTextView mChampionSearch;
+
     public ArrayList<Summoner> mSummoner = new ArrayList<>();
     public ArrayList<Champion> mChamps = new ArrayList<>();
 
@@ -47,12 +50,14 @@ public class SummonerActivity extends AppCompatActivity implements View.OnClickL
         String summonerName = intent.getStringExtra("name");
         mSummonerName.setText(summonerName);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, Constants.Champions);
+        mChampionSearch.setAdapter(adapter);
+
         mChampionDetails.setOnClickListener(this);
         mBackpack.setOnClickListener(this);
 
 
         getSummoner(summonerName);
-        getChampion("2");
     }
 
 
@@ -60,15 +65,26 @@ public class SummonerActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
 
         if(v == mChampionDetails ) {
-          Intent intent = new Intent(SummonerActivity.this, ChampionDetailActivity.class);
-            intent.putExtra("champions", Parcels.wrap(mChamps));
-            startActivity(intent);
+            String championName = mChampionSearch.getText().toString();
+            if(!Arrays.asList(Constants.Champions).contains(championName)) {
+                mChampionSearch.setError("Champion not found. Please retry");
+            }
+            else{
+
+                int position = Arrays.asList(Constants.Champions).indexOf(championName);
+                String championPosition = Arrays.asList(Constants.ChampionId).get(position);
+                Intent intent = new Intent(SummonerActivity.this, LoadingActivity.class);
+                intent.putExtra("champId", championPosition);
+                startActivity(intent);
+
+            }
         }
         else if(v == mBackpack ) {
             Intent intent = new Intent(SummonerActivity.this, BackpackActivity.class);
             startActivity(intent);
         }
     }
+
 
 
 

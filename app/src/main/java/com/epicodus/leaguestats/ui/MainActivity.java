@@ -5,12 +5,17 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.epicodus.leaguestats.Constants;
 import com.epicodus.leaguestats.R;
+
+import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.leagueTextView) TextView mLeagueTextView;
 
     @Bind(R.id.summonerNameEditText)
-    EditText mSummonerName;
+    AutoCompleteTextView mSummonerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mUserButton.setOnClickListener(this);
         mLeagueTextView.setTypeface(leagueFont);
     }
+
 
     @Override
     public void onClick(View v) {
