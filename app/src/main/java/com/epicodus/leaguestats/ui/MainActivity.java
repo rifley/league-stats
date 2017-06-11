@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.getStartedButton) Button mUserButton;
     @Bind(R.id.leagueTextView) TextView mLeagueTextView;
     @Bind(R.id.summonerNameEditText) AutoCompleteTextView mSummonerName;
+    @Bind(R.id.contactTextView) TextView mContactTextView;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Typeface leagueFont = Typeface.createFromAsset(getAssets(), "fonts/league.ttf");
         mUserButton.setOnClickListener(this);
+        mContactTextView.setOnClickListener(this);
         mLeagueTextView.setTypeface(leagueFont);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -110,9 +112,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         }
-//        if(v ==  ) {
-//            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-//            startActivity(intent);
-//        }
+        if(v == mContactTextView ) {
+            Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+            startActivity(intent);
+        }
     }
 }
