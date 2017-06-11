@@ -2,6 +2,7 @@ package com.epicodus.leaguestats.ui;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.passwordLoginButton) Button mPasswordLoginButton;
     @Bind(R.id.emailEditText) EditText mEmailEditText;
     @Bind(R.id.passwordEditText) EditText mPasswordEditText;
+    @Bind(R.id.headerTextView) TextView mLoginTextView;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -37,6 +39,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        Typeface leagueFont = Typeface.createFromAsset(getAssets(), "fonts/league.ttf");
+        mLoginTextView.setTypeface(leagueFont);
+        mRegisterTextView.setTypeface(leagueFont);
+        mEmailEditText.setTypeface(leagueFont);
+        mPasswordEditText.setTypeface(leagueFont);
+
+
         mRegisterTextView.setOnClickListener(this);
         mPasswordLoginButton.setOnClickListener(this);
 

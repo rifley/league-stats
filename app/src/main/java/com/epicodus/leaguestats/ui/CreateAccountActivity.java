@@ -2,6 +2,7 @@ package com.epicodus.leaguestats.ui;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,11 +43,17 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_create_account);
 
         ButterKnife.bind(this);
+        Typeface leagueFont = Typeface.createFromAsset(getAssets(), "fonts/league.ttf");
 
         mAuth = FirebaseAuth.getInstance();
-
         createAuthStateListener();
         createAuthProgressDialog();
+        mNameEditText.setTypeface(leagueFont);
+        mEmailEditText.setTypeface(leagueFont);
+        mPasswordEditText.setTypeface(leagueFont);
+        mConfirmPasswordEditText.setTypeface(leagueFont);
+        mLoginTextView.setTypeface(leagueFont);
+
 
         mLoginTextView.setOnClickListener(this);
         mCreateUserButton.setOnClickListener(this);
