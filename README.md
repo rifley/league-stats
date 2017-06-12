@@ -41,7 +41,7 @@ _Week Three_
 - [x] Implement Firebase user authentication.
 - [ ] Save and retrieve data using Firebase, making sure to structure your data according to Firebase guidelines.
 - [ ] Employ the Firebase-RecyclerAdapter to display from your database.
-- [ ] Use SharedPreferences to save an important piece of data in your app.
+- [x] Use SharedPreferences to save an important piece of data in your app.
 - [x] Utilize dialogs to inform users of login status
 
 

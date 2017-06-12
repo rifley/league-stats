@@ -1,6 +1,8 @@
 package com.epicodus.leaguestats.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +38,8 @@ public class SummonerActivity extends AppCompatActivity implements View.OnClickL
     @Bind(R.id.backpackImageButton) ImageButton mBackpack;
     @Bind(R.id.championCompleteTextView) AutoCompleteTextView mChampionSearch;
 
+    private SharedPreferences mSharedPreferences;
+    private String mUserName;
     public ArrayList<Summoner> mSummoner = new ArrayList<>();
     public ArrayList<Champion> mChamps = new ArrayList<>();
 
@@ -46,9 +50,9 @@ public class SummonerActivity extends AppCompatActivity implements View.OnClickL
 
         ButterKnife.bind(this);
 
-        Intent intent = getIntent();
-        String summonerName = intent.getStringExtra("name");
-        mSummonerName.setText(summonerName);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mUserName = mSharedPreferences.getString("userName", null);
+        mSummonerName.setText(mUserName);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, Constants.Champions);
         mChampionSearch.setAdapter(adapter);
@@ -57,7 +61,7 @@ public class SummonerActivity extends AppCompatActivity implements View.OnClickL
         mBackpack.setOnClickListener(this);
 
 
-        getSummoner(summonerName);
+        getSummoner(mUserName);
     }
 
 

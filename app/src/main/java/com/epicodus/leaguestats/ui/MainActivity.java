@@ -1,7 +1,9 @@
 package com.epicodus.leaguestats.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.summonerNameEditText) AutoCompleteTextView mSummonerName;
     @Bind(R.id.contactTextView) TextView mContactTextView;
 
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
 
         Typeface leagueFont = Typeface.createFromAsset(getAssets(), "fonts/league.ttf");
         mUserButton.setOnClickListener(this);
@@ -108,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             else {
                 Intent intent = new Intent(MainActivity.this, SummonerActivity.class);
-                intent.putExtra("name", userName);
+                addToSharedPreferences(userName);
                 startActivity(intent);
             }
         }
@@ -117,4 +123,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
     }
+    private void addToSharedPreferences(String userName) {
+        mEditor.putString("userName", userName).apply();
+    }
+
 }
