@@ -8,45 +8,65 @@ import org.parceler.Parcel;
 
 @Parcel
 public class Champion {
-    String mName;
-    String mTitle;
-    Double mBaseArmor;
-    Double mBaseHP;
-    Double mBaseAD;
-    Double mBaseMR;
-    String mImageUrl;
+    String name;
+    String title;
+    Double baseArmor;
+    Double armorPerLevel;
+    Double moveSpeed;
+    Double baseHealthPoints;
+    Double hpPerLevel;
+    Double baseAttackDamage;
+    Double baseMagicResist;
+    Double magicResistPerLevel;
+    String imageUrl;
 
     public Champion() {}
 
-    public Champion (String name, String title, Double armor, Double hp, Double mr, Double attackDamage) {
-        this.mName = name;
-        this.mTitle = title;
-        this.mBaseArmor = armor;
-        this.mBaseHP = hp;
-        this.mBaseAD = attackDamage;
-        this.mBaseMR = mr;
-        this.mImageUrl = "http://ddragon.leagueoflegends.com/cdn/7.5.2/img/champion/" + name + ".png";
+    public Champion (String name, String title, Double armor, Double armorLvl, Double speed, Double hp, Double hpPerLvl, Double attackDamage, Double mr, Double mrPerLvl) {
+        this.name = name;
+        this.title = title;
+        this.baseArmor = armor;
+        this.armorPerLevel = armorLvl;
+        this.moveSpeed = speed;
+        this.baseHealthPoints = hp;
+        this.hpPerLevel = hpPerLvl;
+        this.baseAttackDamage = attackDamage;
+        this.baseMagicResist = mr;
+        this.magicResistPerLevel = mrPerLvl;
+        this.imageUrl = "http://ddragon.leagueoflegends.com/cdn/7.5.2/img/champion/" + name + ".png";
     }
 
     public String getName() {
-        return mName;
+        return name;
     }
     public String getTitle() {
-        return mTitle;
+        return title;
     }
     public String getArmor() {
-        return mBaseArmor.toString();
+        return baseArmor.toString();
     }
-    public String getHP() {
-        return mBaseHP.toString();
+    public String getHealthPoints() {
+        return baseHealthPoints.toString();
     }
-    public String getMR() {
-        return mBaseMR.toString();
+    public String getMagicResist() {
+        return baseMagicResist.toString();
     }
     public String getAttack() {
-        return mBaseAD.toString();
+        return baseAttackDamage.toString();
     }
-    public String getImageUrl() { return mImageUrl; }
+    public String getArmorLvl() {
+        return armorPerLevel.toString();
+    }
+    public String getMoveSpeed() {
+        return moveSpeed.toString();
+    }
+    public String getHealthLvl() {
+        return hpPerLevel.toString();
+    }
+    public String getMagicResistLvl() {
+        return magicResistPerLevel.toString();
+    }
+    public String getImageUrl() { return imageUrl; }
 
 
 }

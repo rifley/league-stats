@@ -89,8 +89,16 @@ public class RiotService {
                         .getDouble("attackdamage");
                 Double magicResist = riotJSON.getJSONObject("stats")
                         .getDouble("spellblock");
-                Log.i("name", name);
-                Champion responseChampion = new Champion(name, title, armor, healthPoints, attackDamage, magicResist);
+                Double armorLvl = riotJSON.getJSONObject("stats")
+                        .getDouble("armorperlevel");
+                Double speed = riotJSON.getJSONObject("stats")
+                        .getDouble("movespeed");
+                Double hpLvl = riotJSON.getJSONObject("stats")
+                        .getDouble("hpperlevel");
+                Double magicResistLvl = riotJSON.getJSONObject("stats")
+                        .getDouble("spellblockperlevel");
+
+                Champion responseChampion = new Champion(name, title, armor, armorLvl, speed, healthPoints, hpLvl,  attackDamage, magicResist, magicResistLvl);
                 champions.add(responseChampion);
 
             }

@@ -20,11 +20,11 @@
                 android:value="com.epicodus.leaguestats.ui.MainActivity" />
         </activity>
         <activity android:name=".ui.ContactActivity">
-        </activity>
-        <activity android:name=".ui.BackpackActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.leaguestats.ui.MainActivity" />
+        </activity>
+        <activity android:name=".ui.BackpackActivity">
         </activity>
         <activity android:name=".ui.AddChampionActivity" />
         <activity android:name=".ui.SummonerActivity" />
