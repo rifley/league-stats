@@ -68,7 +68,5 @@ public class Champion {
     }
     public String getImageUrl() { return imageUrl; }
 
-
 }
-
 

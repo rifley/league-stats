@@ -235,7 +235,7 @@
         app:layout_constraintGuide_percent="0.55" />
 
     <Button
-        android:id="@+id/saveChampion"
+        android:id="@+id/saveChampionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add to Backpack"
