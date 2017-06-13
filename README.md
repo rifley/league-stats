@@ -21,7 +21,7 @@ A way for Summoners(users) to check their match history, add favorite champions 
 * When saving champion to firebase, it saves the same information multiple times under different keys. All keys are used at one point, but not during object instantiation. _Fixed 6/13/17_
 
 ## Planning
-
+#### Epicodus check list
  _Week One_
 - [x] Display a list of information
 - [x] Use custom typefaces to enhance your designs
@@ -39,10 +39,15 @@ _Week Two_
 _Week Three_
 
 - [x] Implement Firebase user authentication.
-- [ ] Save and retrieve data using Firebase, making sure to structure your data according to Firebase guidelines.
-- [ ] Employ the Firebase-RecyclerAdapter to display from your database.
+- [x] Save and retrieve data using Firebase, making sure to structure your data according to Firebase guidelines.
+- [x] Employ the Firebase-RecyclerAdapter to display from your database.
 - [x] Use SharedPreferences to save an important piece of data in your app.
 - [x] Utilize dialogs to inform users of login status
+
+#### Wants
+* Summoner match history on summoner activity (recycler view, seperate API call)
+
+* Backpack specific to firebase user auth
 
 
 
