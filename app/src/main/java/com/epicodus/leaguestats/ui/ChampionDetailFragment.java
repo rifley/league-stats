@@ -24,17 +24,17 @@ import butterknife.ButterKnife;
 
 
 public class ChampionDetailFragment extends Fragment implements View.OnClickListener {
-    @Bind(R.id.championImageView) ImageView mChampionImage;
-    @Bind(R.id.championNameTextView) TextView mChampionName;
-    @Bind(R.id.championTitleTextView) TextView mChampionTitle;
-    @Bind(R.id.baseArmorTextView) TextView mBaseArmor;
-    @Bind(R.id.baseHealthTextView) TextView mBaseHealth;
-    @Bind(R.id.baseMagicResistTextView) TextView mBaseMagicResist;
-    @Bind(R.id.attackDamageTextView) TextView mAttackDamage;
-    @Bind(R.id.healthLvlTextView) TextView mHealthLvl;
-    @Bind(R.id.armorLvlTextView) TextView mArmorLvl;
-    @Bind(R.id.magicResistLvlTextView) TextView mResistLvl;
-    @Bind(R.id.moveSpeedTextView) TextView mSpeed;
+    private ImageView mChampionImage;
+    private TextView mChampionName;
+    private TextView mChampionTitle;
+    private TextView mBaseArmor;
+    private TextView mBaseHealth;
+    private TextView mBaseMagicResist;
+    private TextView mAttackDamage;
+    private TextView mHealthLvl;
+    private TextView mArmorLvl;
+    private TextView mResistLvl;
+    private TextView mSpeed;
     @Bind(R.id.saveChampionButton) Button mSaveChampionButton;
 
     private Champion mChampion;
@@ -51,6 +51,7 @@ public class ChampionDetailFragment extends Fragment implements View.OnClickList
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mChampion = Parcels.unwrap(getArguments().getParcelable("champion"));
+
     }
 
 
@@ -58,13 +59,26 @@ public class ChampionDetailFragment extends Fragment implements View.OnClickList
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_champion_detail, container, false);
+        mChampionImage = (ImageView) view.findViewById(R.id.championImageView);
+        mChampionName = (TextView) view.findViewById(R.id.championNameTextView);
+        mChampionTitle = (TextView) view.findViewById(R.id.championTitleTextView);
+        mBaseArmor = (TextView) view.findViewById(R.id.baseArmorTextView);
+        mBaseHealth = (TextView) view.findViewById(R.id.baseHealthTextView);
+        mBaseMagicResist = (TextView) view.findViewById(R.id.baseMagicResistTextView);
+        mAttackDamage = (TextView) view.findViewById(R.id.attackDamageTextView);
+        mHealthLvl = (TextView) view.findViewById(R.id.healthLvlTextView);
+        mArmorLvl = (TextView) view.findViewById(R.id.armorLvlTextView);
+        mResistLvl = (TextView) view.findViewById(R.id.magicResistLvlTextView);
+        mSpeed = (TextView) view.findViewById(R.id.moveSpeedTextView);
+
+
         ButterKnife.bind(this, view);
 
         Picasso.with(view.getContext()).load(mChampion.getImageUrl()).into(mChampionImage);
 
         mChampionName.setText(mChampion.getName());
         mChampionTitle.setText(mChampion.getTitle());
-        mBaseArmor.setText("Base Armor: " + mChampion.getBaseArmor());
+        mBaseArmor.setText("Base Armor: " + mChampion.getBaseArmor().toString());
         mBaseHealth.setText("Base Health: " + mChampion.getBaseHealthPoints());
         mBaseMagicResist.setText("Base Magic Resist: " + mChampion.getBaseMagicResist());
         mAttackDamage.setText("Attack Damage: " + mChampion.getBaseAttackDamage());

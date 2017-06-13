@@ -27,10 +27,11 @@ public class ChampionDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mChampions = Parcels.unwrap(getIntent().getParcelableExtra("champion"));
-//        int startingPosition = getIntent().getIntExtra("position", 0); not relevant with only one champion
+        int startingPosition = getIntent().getIntExtra("position", 0);
+
 
         adapterViewPager = new ChampionPagerAdapter(getSupportFragmentManager(), mChampions);
         mViewPager.setAdapter(adapterViewPager);
-//        mViewPager.setCurrentItem(startingPosition); will use when utilizing firebase
+        mViewPager.setCurrentItem(startingPosition);
     }
 }

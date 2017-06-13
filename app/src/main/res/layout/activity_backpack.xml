@@ -12,24 +12,29 @@
         app:srcCompat="@drawable/league"
         android:layout_alignParentTop="true" />
 
-    <ListView
-        android:id="@+id/championArray"
-        android:layout_width="260dp"
-        android:layout_height="400dp"
-        android:textAlignment="center"
-        android:background="@color/leagueTeal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp" />
+    <!--<ListView-->
+        <!--android:id="@+id/championArray"-->
+        <!--android:layout_width="260dp"-->
+        <!--android:layout_height="400dp"-->
+        <!--android:textAlignment="center"-->
+        <!--android:background="@color/leagueTeal"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="20dp" />-->
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/championArray"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"
-        android:text="Your Backpack"
-        android:textColor="@color/leagueYellowPrimary"
-    />
+    <!--<TextView-->
+        <!--android:id="@+id/textView2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_above="@+id/championArray"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="14dp"-->
+        <!--android:text="Your Backpack"-->
+        <!--android:textColor="@color/leagueYellowPrimary"-->
+    <!--/>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"/>
 </RelativeLayout>

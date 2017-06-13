@@ -84,7 +84,7 @@ public class SummonerActivity extends AppCompatActivity implements View.OnClickL
             }
         }
         else if(v == mBackpack ) {
-            Intent intent = new Intent(SummonerActivity.this, BackpackActivity.class);
+            Intent intent = new Intent(SummonerActivity.this, SavedChampionListActivity.class);
             startActivity(intent);
         }
     }

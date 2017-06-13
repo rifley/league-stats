@@ -21,11 +21,11 @@
 
     <TextView
         android:id="@+id/headerBackground"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="185dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:background="@color/leagueBlack2"
@@ -36,11 +36,9 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="205dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
         android:layout_marginTop="8dp"
         android:background="@color/leagueBlack2"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
@@ -78,12 +76,10 @@
         android:id="@+id/championNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
         android:text="Champion Name"
         android:textColor="@color/leagueYellowPrimary"
         android:textStyle="bold"
@@ -134,7 +130,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline10"
         android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.761" />
+        app:layout_constraintHorizontal_bias="0.761"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
     <TextView
         android:id="@+id/baseHealthTextView"
         android:layout_width="wrap_content"
@@ -147,7 +145,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline10"
         android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.769" />
+        app:layout_constraintHorizontal_bias="0.769"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
     <TextView
         android:id="@+id/baseMagicResistTextView"
         android:layout_width="wrap_content"
@@ -160,7 +160,9 @@
         app:layout_constraintLeft_toLeftOf="@+id/textView11"
         app:layout_constraintRight_toLeftOf="@+id/guideline10"
         android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.72" />
+        app:layout_constraintHorizontal_bias="0.72"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp" />
     <TextView
         android:id="@+id/moveSpeedTextView"
         android:layout_width="wrap_content"
@@ -173,7 +175,9 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/magicResistLvlTextView"
-        app:layout_constraintHorizontal_bias="0.24" />
+        app:layout_constraintHorizontal_bias="0.24"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
     <TextView
         android:id="@+id/armorLvlTextView"
         android:layout_width="wrap_content"
@@ -186,7 +190,9 @@
         app:layout_constraintRight_toRightOf="@+id/textView11"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline10"
-        app:layout_constraintHorizontal_bias="0.198" />
+        app:layout_constraintHorizontal_bias="0.198"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
     <TextView
         android:id="@+id/healthLvlTextView"
         android:layout_width="wrap_content"
@@ -199,7 +205,9 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline10"
-        app:layout_constraintHorizontal_bias="0.2" />
+        app:layout_constraintHorizontal_bias="0.2"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
     <TextView
         android:id="@+id/magicResistLvlTextView"
         android:layout_width="wrap_content"
@@ -212,7 +220,9 @@
         app:layout_constraintLeft_toLeftOf="@+id/guideline10"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.193" />
+        app:layout_constraintHorizontal_bias="0.193"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
     <TextView
         android:id="@+id/attackDamageTextView"
         android:layout_width="wrap_content"
@@ -225,14 +235,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline10"
         android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.698" />
+        app:layout_constraintHorizontal_bias="0.698"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline11"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.55"
+        tools:layout_editor_absoluteY="281dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/saveChampionButton"
@@ -244,8 +258,9 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/textView11"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintHorizontal_bias="0.502"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
 
 </android.support.constraint.ConstraintLayout>
