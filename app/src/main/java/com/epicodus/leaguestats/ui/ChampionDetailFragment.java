@@ -64,13 +64,13 @@ public class ChampionDetailFragment extends Fragment implements View.OnClickList
 
         mChampionName.setText(mChampion.getName());
         mChampionTitle.setText(mChampion.getTitle());
-        mBaseArmor.setText("Base Armor: " + mChampion.getArmor());
-        mBaseHealth.setText("Base Health: " + mChampion.getHealthPoints());
-        mBaseMagicResist.setText("Base Magic Resist: " + mChampion.getMagicResist());
-        mAttackDamage.setText("Attack Damage: " + mChampion.getAttack());
-        mHealthLvl.setText("Health Per Lvl: " + mChampion.getHealthLvl());
-        mArmorLvl.setText("Armor Per Lvl: " + mChampion.getArmorLvl());
-        mResistLvl.setText("Resist Per Lvl: " + mChampion.getMagicResistLvl());
+        mBaseArmor.setText("Base Armor: " + mChampion.getBaseArmor());
+        mBaseHealth.setText("Base Health: " + mChampion.getBaseHealthPoints());
+        mBaseMagicResist.setText("Base Magic Resist: " + mChampion.getBaseMagicResist());
+        mAttackDamage.setText("Attack Damage: " + mChampion.getBaseAttackDamage());
+        mHealthLvl.setText("Health Per Lvl: " + mChampion.getHpPerLevel());
+        mArmorLvl.setText("Armor Per Lvl: " + mChampion.getArmorPerLevel());
+        mResistLvl.setText("Resist Per Lvl: " + mChampion.getMagicResistPerLevel());
         mSpeed.setText("Move Speed: " + mChampion.getMoveSpeed());
 
         mSaveChampionButton.setOnClickListener(this);

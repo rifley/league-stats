@@ -42,28 +42,28 @@ public class Champion {
     public String getTitle() {
         return title;
     }
-    public String getArmor() {
+    public String getBaseArmor() {
         return baseArmor.toString();
     }
-    public String getHealthPoints() {
+    public String getBaseHealthPoints() {
         return baseHealthPoints.toString();
     }
-    public String getMagicResist() {
+    public String getBaseMagicResist() {
         return baseMagicResist.toString();
     }
-    public String getAttack() {
+    public String getBaseAttackDamage() {
         return baseAttackDamage.toString();
     }
-    public String getArmorLvl() {
+    public String getArmorPerLevel() {
         return armorPerLevel.toString();
     }
     public String getMoveSpeed() {
         return moveSpeed.toString();
     }
-    public String getHealthLvl() {
+    public String getHpPerLevel() {
         return hpPerLevel.toString();
     }
-    public String getMagicResistLvl() {
+    public String getMagicResistPerLevel() {
         return magicResistPerLevel.toString();
     }
     public String getImageUrl() { return imageUrl; }

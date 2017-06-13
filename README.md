@@ -18,7 +18,7 @@ A way for Summoners(users) to check their match history, add favorite champions 
 * You should now be able to run the application by clicking the green play button.
 
 ## Known Bugs
-* When saving champion to firebase, it saves the same information multiple times under different keys. All keys are used at one point, but not during object instantiation.
+* When saving champion to firebase, it saves the same information multiple times under different keys. All keys are used at one point, but not during object instantiation. _Fixed 6/13/17_
 
 ## Planning
 

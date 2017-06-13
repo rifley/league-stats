@@ -81,25 +81,27 @@ public class RiotService {
                 JSONObject riotJSON = new JSONObject(jsonData);
                 String name = riotJSON.getString("name");
                 String title = riotJSON.getString("title");
-                Double armor = riotJSON.getJSONObject("stats")
+                Double baseArmor = riotJSON.getJSONObject("stats")
                         .getDouble("armor");
-                Double healthPoints = riotJSON.getJSONObject("stats")
+                Double baseHealthPoints = riotJSON.getJSONObject("stats")
                         .getDouble("hp");
-                Double attackDamage = riotJSON.getJSONObject("stats")
+                Double baseAttackDamage = riotJSON.getJSONObject("stats")
                         .getDouble("attackdamage");
-                Double magicResist = riotJSON.getJSONObject("stats")
+                Double baseMagicResist = riotJSON.getJSONObject("stats")
                         .getDouble("spellblock");
-                Double armorLvl = riotJSON.getJSONObject("stats")
+                Double armorPerLevel = riotJSON.getJSONObject("stats")
                         .getDouble("armorperlevel");
-                Double speed = riotJSON.getJSONObject("stats")
+                Double moveSpeed = riotJSON.getJSONObject("stats")
                         .getDouble("movespeed");
-                Double hpLvl = riotJSON.getJSONObject("stats")
+                Double hpPerLevel = riotJSON.getJSONObject("stats")
                         .getDouble("hpperlevel");
-                Double magicResistLvl = riotJSON.getJSONObject("stats")
+                Double magicResistPerLevel = riotJSON.getJSONObject("stats")
                         .getDouble("spellblockperlevel");
 
-                Champion responseChampion = new Champion(name, title, armor, armorLvl, speed, healthPoints, hpLvl,  attackDamage, magicResist, magicResistLvl);
+                Champion responseChampion = new Champion(name, title, baseArmor, armorPerLevel, moveSpeed, baseHealthPoints, hpPerLevel,  baseAttackDamage, baseMagicResist, magicResistPerLevel);
                 champions.add(responseChampion);
+
+             
 
             }
         } catch(IOException e){
