@@ -48,7 +48,9 @@ public class FirebaseChampionViewHolder extends RecyclerView.ViewHolder implemen
         Picasso.with(mContext)
                 .load(champion.getImageUrl())
                 .resize(MAX_WIDTH, MAX_HEIGHT)
-                .centerCrop();
+                .centerCrop()
+                .into(championImageView);
+
 
 
         nameTextView.setText(champion.getName());

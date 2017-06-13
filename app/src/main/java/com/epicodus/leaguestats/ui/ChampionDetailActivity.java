@@ -26,8 +26,8 @@ public class ChampionDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_champion_detail);
         ButterKnife.bind(this);
 
-        mChampions = Parcels.unwrap(getIntent().getParcelableExtra("champion"));
-        int startingPosition = getIntent().getIntExtra("position", 0);
+        mChampions = Parcels.unwrap(getIntent().getParcelableExtra("champions"));
+        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
 
 
         adapterViewPager = new ChampionPagerAdapter(getSupportFragmentManager(), mChampions);
