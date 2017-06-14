@@ -28,10 +28,16 @@ public class ChampionDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mChampions = Parcels.unwrap(getIntent().getParcelableExtra("champions"));
-        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
-        adapterViewPager = new ChampionPagerAdapter(getSupportFragmentManager(), mChampions);
-        mViewPager.setAdapter(adapterViewPager);
-        mViewPager.setCurrentItem(startingPosition);
+        try {
+            Integer startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
+            adapterViewPager = new ChampionPagerAdapter(getSupportFragmentManager(), mChampions);
+            mViewPager.setAdapter(adapterViewPager);
+            mViewPager.setCurrentItem(startingPosition);
+        }
+        catch (NumberFormatException e){
+            adapterViewPager = new ChampionPagerAdapter(getSupportFragmentManager(), mChampions);
+            mViewPager.setAdapter(adapterViewPager);
+        }
 
     }
 }

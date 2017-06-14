@@ -69,7 +69,7 @@ public class ChampionListAdapter extends RecyclerView.Adapter<ChampionListAdapte
         public void onClick(View v) {
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, ChampionDetailActivity.class);
-            intent.putExtra("position", itemPosition + "");
+            intent.putExtra("position", itemPosition + "0");
             intent.putExtra("cameFrom", "adapter");
             intent.putExtra("champions", Parcels.wrap(mChampions));
             mContext.startActivity(intent);

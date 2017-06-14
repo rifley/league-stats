@@ -42,9 +42,8 @@ public class LoadingActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mChamps = riotService.processStats(response);
-                Intent intent = new Intent(LoadingActivity.this, ChampionDetailNonArrayActivity.class);
+                Intent intent = new Intent(LoadingActivity.this, ChampionDetailActivity.class);
                 intent.putExtra("champions", Parcels.wrap(mChamps));
-                intent.putExtra("cameFrom", "loading");
                 startActivity(intent);
             }
         });
