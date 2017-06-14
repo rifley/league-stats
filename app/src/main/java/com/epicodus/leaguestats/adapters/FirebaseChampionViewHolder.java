@@ -28,6 +28,7 @@ import java.util.ArrayList;
 public class FirebaseChampionViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private static final int MAX_WIDTH = 200;
     private static final int MAX_HEIGHT = 200;
+    public ImageView mChampionImageView;
 
     View mView;
     Context mContext;
@@ -40,7 +41,7 @@ public class FirebaseChampionViewHolder extends RecyclerView.ViewHolder implemen
     }
 
     public void bindChampion(Champion champion) {
-        ImageView championImageView = (ImageView) mView.findViewById(R.id.championImageView);
+        mChampionImageView = (ImageView) mView.findViewById(R.id.championImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.championNameTextView);
         TextView titleTextView = (TextView) mView.findViewById(R.id.championTitleTextView);
         TextView viewStatsTextView = (TextView) mView.findViewById(R.id.viewStatsTextView);
@@ -49,7 +50,7 @@ public class FirebaseChampionViewHolder extends RecyclerView.ViewHolder implemen
                 .load(champion.getImageUrl())
                 .resize(MAX_WIDTH, MAX_HEIGHT)
                 .centerCrop()
-                .into(championImageView);
+                .into(mChampionImageView);
 
 
 

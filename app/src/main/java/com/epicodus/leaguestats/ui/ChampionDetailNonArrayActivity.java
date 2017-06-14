@@ -1,9 +1,9 @@
 package com.epicodus.leaguestats.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.epicodus.leaguestats.R;
 import com.epicodus.leaguestats.adapters.ChampionPagerAdapter;
@@ -16,7 +16,11 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class ChampionDetailActivity extends AppCompatActivity {
+/**
+ * Created by Guest on 6/14/17.
+ */
+
+public class ChampionDetailNonArrayActivity extends AppCompatActivity{
     @Bind(R.id.viewPager) ViewPager mViewPager;
     private ChampionPagerAdapter adapterViewPager;
     ArrayList<Champion> mChampions = new ArrayList<>();
@@ -28,10 +32,10 @@ public class ChampionDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mChampions = Parcels.unwrap(getIntent().getParcelableExtra("champions"));
-        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
+        int startingPosition = getIntent().getIntExtra("position", 0);
         adapterViewPager = new ChampionPagerAdapter(getSupportFragmentManager(), mChampions);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
-
     }
+
 }
