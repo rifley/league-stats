@@ -3,6 +3,7 @@ package com.epicodus.leaguestats.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.epicodus.leaguestats.R;
 import com.epicodus.leaguestats.models.Champion;
 import com.epicodus.leaguestats.ui.ChampionDetailActivity;
+import com.epicodus.leaguestats.util.ItemTouchHelperViewHolder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,7 +27,7 @@ import java.util.ArrayList;
  * Created by riffee on 6/13/2017.
  */
 
-public class FirebaseChampionViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class FirebaseChampionViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, ItemTouchHelperViewHolder {
     private static final int MAX_WIDTH = 200;
     private static final int MAX_HEIGHT = 200;
     public ImageView mChampionImageView;
@@ -58,7 +60,6 @@ public class FirebaseChampionViewHolder extends RecyclerView.ViewHolder implemen
         titleTextView.setText(champion.getTitle());
     }
 
-    @Override
     public void onClick(View view) {
         final ArrayList<Champion> champions = new ArrayList<>();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("champions");
@@ -83,5 +84,23 @@ public class FirebaseChampionViewHolder extends RecyclerView.ViewHolder implemen
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+    }
+
+    @Override
+    public void onItemSelected() {
+        itemView.animate()
+                .alpha(0.7f)
+                .scaleX(0.9f)
+                .scaleY(0.9f)
+                .setDuration(500);
+    }
+
+    @Override
+    public void onItemClear() {
+        itemView.animate()
+                .alpha(0.7f)
+                .scaleX(0.9f)
+                .scaleY(0.9f)
+                .setDuration(500);
     }
 }

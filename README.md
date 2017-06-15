@@ -19,6 +19,7 @@ A way for Summoners(users) to check their match history, add favorite champions 
 
 ## Known Bugs
 * When saving champion to firebase, it saves the same information multiple times under different keys. All keys are used at one point, but not during object instantiation. _Fixed 6/13/17_
+* Activating animation for onItemSelected causes view to stay faded even after deselected.
 
 ## Planning
 #### Epicodus check list
